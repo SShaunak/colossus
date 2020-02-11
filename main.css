@@ -92,6 +92,7 @@ font-family: 'Acme', sans-serif;
     font-size: 11vw;
     margin-top: 60px;
     text-align: center;
+	  text-shadow: 1px 4px tomato;
   }
   .column {
     width: auto;
