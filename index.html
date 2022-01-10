@@ -152,7 +152,74 @@ else
         $stmt->close();
         $conn->close();
 }
+?>
+
+----------------------------------------------------------
+               VALIDATION
+----------------------------------------------------------
+	
+	<html>
+<head>
+<title>Login Page</title>
+</head>
+<body>
+
+<form name="myForm" onsubmit="return validate()" action="conn.php" method="POST">
+
+<label>Username: </label>
+<input type="text" name="name">
+
+<label>Password: </label>
+<input type="password" name="password">
+
+<input type="submit" value="Submit">
+
+</form>
+</body>
+</html>
+=================================
+===============================
+function validate() 
+    {
+        if (document.myForm.name.value == "") 
+        {
+            alert("please provide your name!");
+            document.myForm.name.focus();
+            return false;
+         }
+
+        if (document.myForm.password.value == "") 
+        {
+            alert("please provide your password!");
+            document.myForm.password.focus();
+            return false;
+        }
+
+        return true;
+   }
+====================
+================
+<?php
+$name=$_POST["name"];
+$password=$_POST["password"];
+
+$conn= new mysqli('localhost','root','','uk11');
+if($conn->connect_error)
+{
+die('connection failed: '.$conn->connect_error);
+}
+else
+{
+$stmt=$conn->prepare("insert into examtest(username,password)values(?,?)");
+$stmt->bind_param("ss",$name, $password);
+$stmt->execute();
+echo "Reg Success..";
+$stmt->close();
+$conn->close();
+}
 ?-->
+
+
 
 
 <body style="background-color: #FFFFFF">
