@@ -217,7 +217,132 @@ echo "Reg Success..";
 $stmt->close();
 $conn->close();
 }
-?-->
+?>
+
+------------------------------------------------------------------------------
+
+                         IMAGE MANIPULATOIN
+------------------------------------------------------------------------------
+	
+	<!DOCTYPE html>
+<html>
+<head>
+    <title>DOMS using JS</title>
+    <script type="text/javascript">
+        function setNewImage()
+        {
+            document.getElementById("x").src="wallie.jpg";
+        }
+
+        function setOldImage()
+        {
+            document.getElementById("x").src="tester.jpg";
+        }
+    </script>
+</head>
+<body bgcolor="black">
+    <img id="x" src="" heigh="300" width="300" onmouseover="setNewImage()"
+    onmouseout="setOldImage()"></img>
+
+</body>
+</html>
+	
+	
+	------------------------------------------------------------------------------
+
+                        ELEMENT BY TAG NAME
+------------------------------------------------------------------------------
+	
+	
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOMS using JS</title>
+    <script type="text/javascript">
+        function styleChange()
+        {
+            var para=document.getElementsByTagName("p");
+            for(var i=0;i<para.length;i++)
+            {
+                para[i].style.fontSize=24;
+                para[i].style.fontWeight="bold";
+                para[i].style.fontStyle="italic";
+            }
+        }
+    </script>
+</head>
+<body bgcolor="black">
+    <p style="color:tomato">#1 Paragraph</p>
+    <p style="color:tomato">#2 Paragraph</p>
+    <p style="color:tomato">#3 Paragraph</p>
+    <p style="color:tomato">#4 Paragraph</p>
+    <p style="color:tomato">#5 Paragraph</p>
+    <button onclick="styleChange()" name="Submit">Change Style</button>
+
+</body>
+</html>
+
+		------------------------------------------------------------------------------
+
+                        ELEMENT BY CLASS NAME NEW
+------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOMS using JS</title>
+    <script type="text/javascript">
+        function styleChange()
+        {
+            var para=document.getElementsByClassName("pt");
+            for(var i=0;i<para.length;i++)
+            {
+                para[i].style.fontSize=24;
+                para[i].style.fontWeight="bold";
+                para[i].style.fontStyle="italic";
+            }
+        }
+    </script>
+</head>
+<body bgcolor="black">
+    <p class="a" style="color:tomato">#1 Paragraph</p>
+    <p class="pt" style="color:tomato">#2 Paragraph</p>
+    <p class="a" style="color:tomato">#3 Paragraph</p>
+    <p class="pt" style="color:tomato">#4 Paragraph</p>
+    <p class="pt" style="color:tomato">#5 Paragraph</p>
+    <button onclick="styleChange()" name="Submit">Change Style</button>
+
+</body>
+</html>
+
+------------------------------------------------------------------------------
+
+                        ON CLICK
+------------------------------------------------------------------------------
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>saffs</title>
+    <script language="JavaScript" type="text/javascript">
+
+        function changecolor(code)
+        {
+            document.bgColor=code
+        }
+
+</script>
+</head>
+<body>
+<form>
+    <input type="button" name="Button1" value="RED" onclick="changecolor('red')">
+    <input type="button" name="Button2" value="GREEN" onclick="changecolor('green')">
+    <input type="button" name="Button3" value="BLUE" onclick="changecolor('blue')">
+    <input type="button" name="Button4" value="WHITE" onclick="changecolor('white')">
+</form>
+</body>
+</html-->
+
 
 
 
