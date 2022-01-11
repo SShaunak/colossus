@@ -154,6 +154,38 @@ else
 }
 ?>
 
+---------------------------------------------------------
+               CRUD PHP DISPLAY TABLE
+-------------------------------------------
+
+
+<?php
+
+include "db_conn.php";
+$sql = "SELECT name, score FROM table_test";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0)
+{
+  // output data of each row
+	while($row = $result->fetch_assoc()) 
+	{
+    echo "- Name: " . $row["name"]. " " . $row["score"]. "<br>";
+	}
+} 
+else {
+  echo "0 results";
+}
+
+?>
+
+
+
+
+
+
+
+
 ----------------------------------------------------------
                VALIDATION
 ----------------------------------------------------------
